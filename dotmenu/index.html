@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <span style="--i:0;--x:-1;--y:-1">
+            <i class="bi bi-cloud-lightning"></i></span>
+        <span style="--i:1;--x: 0;--y:-1">
+            <i class="bi bi-camera"></i></span>
+        <span style="--i:2;--x: 1;--y:-1">
+            <i class="bi bi-alarm"></i></span>
+        <span style="--i:3;--x:-1;--y:0">
+            <i class="bi bi-chat"></i></span>
+        <span style="--i:4;--x: 0;--y:0">
+            <i class="bi bi-bell"></i></span>
+        <span style="--i:5;--x: 1;--y:0">
+            <i class="bi bi-airplane"></i>
+        </span>
+        <span style="--i:6;--x:-1;--y:1">
+            <i class="bi bi-card-checklist"></i>
+        </span>
+        <span style="--i:7;--x: 0;--y:1">
+            <i class="bi bi-plug"></i>
+        </span>
+        <span style="--i:8;--x:1;--y:1">
+            <i class="bi bi-ethernet"></i>
+        </span>
+    </div>
+    <script>
+        let nav = document.querySelector('.navigation');
+        nav.addEventListener('click', () => {
+            nav.classList.toggle('active')
+        })
+    </script>
+</body>
+
+</html>
