@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+$leaves: 5 5% 17s, 1 10% 10s, 3 15% 18s, 4 30% 12s, 7 40% 20s, 8 50% 15s,
+  6 70% 12s, 2 90% 10s;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .tree {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .girl {
+    position: absolute;
+    scale: 0.65;
+    pointer-events: none;
+    animation: animateGirl 20s linear infinite;
+  }
+  @keyframes animateGirl {
+    0% {
+      transform: translateX(calc(100% + 100vw));
+    }
+    50% {
+      transform: translateX(calc(-100% - 100vw));
+    }
+    50.01% {
+      transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+    }
+    100% {
+      transform: translateX(calc(100% + 100vw)) rotateY(180deg);
+    }
+  }
+  .login {
+    position: relative;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    gap: 15px;
+    box-shadow: 0 25px 50px rgba(255, 255, 255, 0.25);
+    h2 {
+      position: relative;
+      width: 100%;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #8f2c24;
+      font-weight: 600;
+    }
+    .inputBox {
+      position: relative;
+      input {
+        position: relative;
+        width: 100%;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        font-size: 1.25rem;
+        border-radius: 15px;
+        background-color: #fff;
+        &::placeholder {
+          color: #8f2c24;
+        }
+      }
+      #btn {
+        position: relative;
+        border: none;
+        outline: none;
+        color: #fff;
+        background-color: #8f2c24;
+        cursor: pointer;
+        font-size: 1.25rem;
+        font-weight: 500;
+        transition: 0.5s;
+        &:hover {
+          background-color: #d64c42;
+        }
+      }
+    }
+    .group {
+      display: flex;
+      justify-content: space-evenly;
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.25rem;
+        color: #8f2c24;
+        opacity: 1;
+        transition: 0.5s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .leave {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    .set {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      div {
+        position: absolute;
+        display: block;
+        @each $index, $position, $time in $leaves {
+          &:nth-child(#{$index}) {
+            left: #{$position};
+            animation: animateLeave #{$time} both infinite;
+          }
+        }
+        @keyframes animateLeave {
+          0% {
+            opacity: 0;
+            top: -10%;
+            transform: translateX(20px) rotate(0deg);
+          }
+          10% {
+            opacity: 1;
+          }
+          20% {
+            transform: translateX(-20px) rotate(45deg);
+          }
+          30% {
+            transform: translateX(20px) rotate(75deg);
+          }
+          50% {
+            transform: translateX(20px) rotate(45deg);
+          }
+          70% {
+            transform: translateX(20px) rotate(90deg);
+          }
+          100% {
+            top: 110%;
+            transform: translateX(20px) rotate(0deg);
+          }
+        }
+      }
+    }
+  }
+}
