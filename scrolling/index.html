@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <section>
+        <img src="image/stars.png" id="stars">
+        <img src="image/moon.png" alt="" id="moon">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="image/mountains_front.png" alt="" id="mountains_front">
+        <img src="image/mountains_behind.png" alt="" id="mountain_behind">
+
+
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallaxx Scroll Effect</h2>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus ab corrupti, commodi sunt saepe
+            vero aliquid, reprehenderit ea nemo beatae illum? Eum ea porro pariatur quod quasi nisi suscipit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non, quia molestiae repellat eaque
+            consequatur enim pariatur laudantium ea velit. Architecto, suscipit cum velit quos perferendis deserunt
+            doloremque dolore ipsam!
+            <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus ab corrupti, commodi sunt saepe
+            vero aliquid, reprehenderit ea nemo beatae illum? Eum ea porro pariatur quod quasi nisi suscipit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non, quia molestiae repellat eaque
+            consequatur enim pariatur laudantium ea velit. Architecto, suscipit cum velit quos perferendis deserunt
+            doloremque dolore ipsam!
+            <br><br>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus ab corrupti, commodi sunt saepe
+            vero aliquid, reprehenderit ea nemo beatae illum? Eum ea porro pariatur quod quasi nisi suscipit?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non, quia molestiae repellat eaque
+            consequatur enim pariatur laudantium ea velit. Architecto, suscipit cum velit quos perferendis deserunt
+            doloremque dolore ipsam!
+
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                let value = window.scrollY;
+                $('#stars').css('left', `${value}px`);
+                $('#moon').css('top', `${value * 0.5}px`);
+                $('#mountain_behind').css('top', `${value}px`);
+                $('#btn').css('top', `${value}px`);
+                $('#text').css('marginRight', `${value * 3}px`)
+
+
+            })
+        });
+    </script>
+</body>
+
+</html>

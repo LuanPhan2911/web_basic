@@ -7,9 +7,224 @@
   font-family: "Ubuntu", sans-serif;
 }
 
-body {
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px;
+  transition: 0.5s;
+  background-color: #fff;
+  overflow: hidden;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 30%;
+  top: 10%;
+  background: url("image/dotted.png");
+  background-size: cover;
+  animation: animateDot 5s linear infinite;
+}
+@keyframes animateDot {
+  0%, 100% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+}
+.banner .color {
+  position: absolute;
+  right: 0;
+  max-width: 800px;
+  animation: animateColor 5s ease-in-out infinite;
+}
+@keyframes animateColor {
+  0% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
+}
+.banner .men {
+  position: absolute;
+  right: 100px;
+  height: 80vh;
+  bottom: 0;
+  animation: animateMen 4s linear infinite;
+}
+@keyframes animateMen {
+  0% {
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+.banner header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+}
+.banner header .logo {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.banner header .logo span {
+  color: #2196f3;
+}
+.banner header ul {
+  display: flex;
+  gap: 20px;
+}
+.banner header ul li {
+  list-style: none;
+}
+.banner header ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #333;
+  transition: 0.5s;
+}
+.banner .content {
+  position: relative;
+  max-width: 700px;
+  z-index: 10;
+}
+.banner .content h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 200;
+  transition: 0.5s;
+}
+.banner .content h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #333;
+}
+.banner .content h3 span {
+  color: #e91363;
+}
+.banner .content p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+  margin: 10px 0;
+  transition: 0.5s;
+}
+.banner .content button {
+  position: relative;
+  background: #2196f3;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  margin-right: 15px;
+  color: #fff;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 600;
+  min-width: 150px;
+}
+.banner .content button.chat {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #e91363;
+}
+.banner .content button.chat i {
+  position: relative;
+  color: #e91363;
+}
+.banner .content button.chat:hover {
+  border: 1px solid #e91363;
+  font-size: 1.4rem;
+}
+.banner .sci {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+.banner .sci li {
+  list-style: none;
+}
+.banner .sci li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+.banner .sci li a:hover {
+  color: #2196f3;
+}
+.banner .dayNight {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  color: #666;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 2rem;
+}
+.banner .dayNight i:nth-child(2) {
+  display: none;
+}
+.banner.night {
+  background-color: #333;
+}
+.banner.night .dayNight i:nth-child(2) {
+  display: block;
+}
+.banner.night .dayNight i:nth-child(1) {
+  display: none;
+}
+.banner.night header a {
+  color: #fff;
+}
+.banner.night .content h2,
+.banner.night .content h3,
+.banner.night .content p {
+  color: #fff;
+  transition: 0.5s;
+}
+.banner.night .content button.chat {
+  color: #fff;
+  border: 1px solid #fff;
+  transition: 0.5s;
+}
+.banner.night .sci li a {
+  color: #fff;
+}
+.banner.night .sci li a:hover {
+  color: #2196f3;
 }/*# sourceMappingURL=style.css.map */

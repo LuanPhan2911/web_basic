@@ -6,9 +6,232 @@
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
 }
-body {
+
+.banner {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 30%;
+    top: 10%;
+    background: url("image/dotted.png");
+    background-size: cover;
+    animation: animateDot 5s linear infinite;
+  }
+  @keyframes animateDot {
+    0%,
+    100% {
+      transform: translate(10px, 10px);
+    }
+    50% {
+      transform: translate(0, 0);
+    }
+  }
+  .color {
+    position: absolute;
+    right: 0;
+    max-width: 800px;
+    animation: animateColor 5s ease-in-out infinite;
+  }
+  @keyframes animateColor {
+    0% {
+      transform: translateX(-30px);
+    }
+    50% {
+      transform: translateX(30px);
+    }
+    100% {
+      transform: translateX(-30px);
+    }
+  }
+  .men {
+    position: absolute;
+    right: 100px;
+    height: 80vh;
+    bottom: 0;
+    animation: animateMen 4s linear infinite;
+  }
+  @keyframes animateMen {
+    0% {
+      transform: translateY(30px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(30px);
+    }
+  }
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  padding: 100px;
+  transition: 0.5s;
+  background-color: #fff;
+  overflow: hidden;
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    .logo {
+      color: #333;
+      font-size: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.5s;
+      span {
+        color: #2196f3;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 20px;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1.2rem;
+          color: #333;
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+  .content {
+    position: relative;
+    max-width: 700px;
+    z-index: 10;
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      font-weight: 200;
+      transition: 0.5s;
+    }
+    h3 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #333;
+      span {
+        color: #e91363;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      color: #666;
+      font-weight: 500;
+      margin: 10px 0;
+      transition: 0.5s;
+    }
+    button {
+      position: relative;
+      background: #2196f3;
+      border-radius: 15px;
+      padding: 15px;
+      font-size: 1.25rem;
+      border: none;
+      outline: none;
+      margin-right: 15px;
+      color: #fff;
+      letter-spacing: 0.05rem;
+      cursor: pointer;
+      transition: 0.5s;
+      font-weight: 600;
+      min-width: 150px;
+      &.chat {
+        background-color: transparent;
+        color: #333;
+        border: 1px solid #e91363;
+        i {
+          position: relative;
+          color: #e91363;
+        }
+        &:hover {
+          border: 1px solid #e91363;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .sci {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 20px;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.5rem;
+        transition: 0.5s;
+        &:hover {
+          color: #2196f3;
+        }
+      }
+    }
+  }
+  .dayNight {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 2rem;
+    & i:nth-child(2) {
+      display: none;
+    }
+  }
+  &.night {
+    background-color: #333;
+    .dayNight {
+      & i:nth-child(2) {
+        display: block;
+      }
+      & i:nth-child(1) {
+        display: none;
+      }
+    }
+    header {
+      a {
+        color: #fff;
+      }
+    }
+    .content {
+      h2,
+      h3,
+      p {
+        color: #fff;
+        transition: 0.5s;
+      }
+      button.chat {
+        color: #fff;
+        border: 1px solid #fff;
+        transition: 0.5s;
+      }
+    }
+    .sci li a {
+      color: #fff;
+      &:hover {
+        color: #2196f3;
+      }
+    }
+  }
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="numbers">
+            <span style="--i:0">12</span>
+            <span style="--i:1"><b>3</b> </span>
+            <span style="--i:3"><b>6</b></span>
+            <span style="--i:2">9</span>
+            <div class="circle" id="hr"> <i></i></div>
+            <div class="circle" id="mn"><i></i></div>
+            <div class="circle" id="sc"><i></i></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            setInterval(() => {
+                let date = new Date();
+                let hh = date.getHours() * 30;
+                let mm = date.getMinutes() * 6;
+                let ss = date.getSeconds() * 6;
+                $('#hr').css('transform', `rotateZ(${hh + (mm / 12)}deg)`);
+                $('#mn').css('transform', `rotateZ(${mm}deg)`);
+                $('#sc').css('transform', `rotateZ(${ss}deg)`);
+            }, 1000);
+
+
+
+        });
+    </script>
+</body>
+
+</html>
