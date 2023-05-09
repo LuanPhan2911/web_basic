@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #2f363e;
+  overflow: hidden;
+}
+
+.clock {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 2;
+  box-shadow: inset 5px 5px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgb(214, 33, 33);
+  border-radius: 50%;
+  border: 1px solid #fff;
+  z-index: 100;
+}
+.clock #time {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock #time .circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock #time .circle .dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+.clock #time .circle .dots::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--clr);
+  border-radius: 50%;
+  top: -3px;
+  box-shadow: 0 0 25px var(--clr), 0 0 40px var(--clr), 0 0 60px var(--clr), 0 0 80px var(--clr);
+}
+.clock #time .circle svg {
+  position: relative;
+  transform: rotate(270deg);
+}
+.clock #time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 5;
+  stroke: var(--clr);
+  transform: translate(5px, 5px);
+  opacity: 0.25;
+}
+.clock #time .circle:nth-child(1) svg {
+  width: 250px;
+  height: 250px;
+}
+.clock #time .circle:nth-child(1) svg circle {
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+}
+.clock #time .circle:nth-child(2) svg {
+  width: 210px;
+  height: 210px;
+}
+.clock #time .circle:nth-child(2) svg circle {
+  stroke-dasharray: 630;
+  stroke-dashoffset: 630;
+}
+.clock #time .circle:nth-child(3) svg {
+  width: 170px;
+  height: 170px;
+}
+.clock #time .circle:nth-child(3) svg circle {
+  stroke-dasharray: 510;
+  stroke-dashoffset: 510;
+}
+.clock #time .niddle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+.clock #time .niddle i {
+  position: absolute;
+  width: 2px;
+  height: 50%;
+  background-color: var(--clr2);
+  opacity: 0.75;
+  border-radius: 6px;
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+}
+.clock #time .niddle#mn {
+  width: 170px;
+  height: 170px;
+  z-index: 9;
+}
+.clock #time .niddle#mn i {
+  width: 3px;
+}
+.clock #time .niddle#hr {
+  width: 140px;
+  height: 140px;
+  z-index: 8;
+}
+.clock #time .niddle#hr i {
+  width: 4px;
+}
+.clock #time span {
+  position: absolute;
+  inset: 55px;
+  text-align: center;
+  color: #999;
+  transform: rotate(calc(30deg * var(--i)));
+}
+.clock #time span b {
+  font-size: 0.75rem;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--i)));
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px;
+  position: relative;
+  background-color: #fff;
+}
+section .circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #017143;
+  -webkit-clip-path: circle(600px at right 800px);
+          clip-path: circle(600px at right 800px);
+}
+section header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section header .logo {
+  max-width: 80px;
+  position: relative;
+}
+section header ul {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+section header ul li {
+  list-style: none;
+}
+section header ul li a {
+  text-decoration: none;
+  font-weight: 400;
+  color: #333;
+  display: inline-block;
+}
+section .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section .content .textBox {
+  position: relative;
+  max-width: 600px;
+}
+section .content .textBox h2 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #333;
+}
+section .content .textBox h2 span {
+  color: #017143;
+  font-size: 5rem;
+  font-weight: 900;
+}
+section .content .textBox p {
+  color: #333;
+}
+section .content .textBox a {
+  padding: 20px;
+  background-color: #017143;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  margin: 8px 20px;
+  border-radius: 40px;
+  font-weight: 500;
+}
+section .content .imgBox {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  margin-top: 20px;
+}
+section .content .imgBox img {
+  max-width: 340px;
+}
+section .thumb {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  display: flex;
+  transform: translateX(-50%);
+}
+section .thumb li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section .thumb li:hover {
+  transform: translateY(-15px);
+}
+section .thumb li img {
+  max-width: 60px;
+}
+section .sci {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .sci li {
+  list-style: none;
+  margin: 10px;
+}
+section .sci li a {
+  display: inline-block;
+  text-decoration: none;
+  transform: scale(0.6);
+  filter: invert(1);
+  z-index: 100;
+}/*# sourceMappingURL=style.css.map */
