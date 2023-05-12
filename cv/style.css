@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  margin: 50px;
+  box-shadow: 0 50px 75px rgba(0, 0, 0, 0.1);
+  border-left: 50px solid #fff;
+  border-right: 50px solid #fff;
+}
+.container .top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 40px;
+  padding-bottom: 0;
+}
+.container .top .imgBx {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .top .imgBx .box {
+  position: relative;
+  width: 70%;
+  min-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.container .top .imgBx .box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .top .profileText {
+  position: relative;
+  display: flex;
+  padding: 40px;
+  align-items: center;
+}
+.container .top .profileText h3 {
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #333;
+  line-height: 1.2em;
+}
+.container .top .profileText h3 span {
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 300;
+  top: -10px;
+}
+.container .contentBox {
+  position: relative;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0px 40px 40px;
+}
+.container .contentBox h3 {
+  border-left: 4px solid #ff8bb3;
+  padding-left: 10px;
+  line-height: 1em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #333;
+}
+.container .contentBox h5 {
+  color: #3590d2;
+}
+.container .contentBox h4 {
+  color: #333;
+  margin: 5px 0;
+  font-weight: 500;
+}
+.container .contentBox h6 {
+  color: #666;
+  font-weight: 300;
+  font-size: 1em;
+}
+.container .contentBox ul {
+  position: relative;
+  margin: 10px 0;
+}
+.container .contentBox ul li {
+  list-style: none;
+  margin: 25px 0;
+  line-height: 1em;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+}
+.container .contentBox ul li .icon {
+  font-size: 1.2em;
+  margin-right: 15px;
+  color: #3590d2;
+}
+.container .contentBox ul.education li {
+  flex-direction: column;
+  margin: 25px 0;
+}
+.container .contentBox ul.interest {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.container .contentBox ul.interest li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.container .contentBox ul.interest li .icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #3590d2;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contentBox .leftSide .skills .box {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.container .contentBox .leftSide .skills .box h4 {
+  color: #3590d2;
+}
+.container .contentBox .leftSide .skills .box span {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+.container .contentBox .leftSide .skills .box span.percent {
+  position: relative;
+  width: 100%;
+  background-color: #e3e3e3;
+  height: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+}
+.container .contentBox .leftSide .skills .box span.percent div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #3590d2;
+  height: 100%;
+}
+.container .contentBox .rightSide {
+  padding-left: 40px;
+}
+.container .contentBox .rightSide .experience .box {
+  display: flex;
+  margin: 20px 0;
+}
+.container .contentBox .rightSide .experience .box .company {
+  min-width: 120px;
+  margin-bottom: 10px;
+}
+.container .contentBox .rightSide .experience .box .text h4 {
+  color: #3590d2;
+  font-size: 16px;
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */
