@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/css/dycalendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar</title>
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <div class="container">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            dycalendar.draw({
+                target: '#calendar',
+                type: 'month',
+                month: 1,
+                dayformat: "full",
+                monthformat: "full",
+                prevnextbutton: "show",
+                highlighttargetdate: true,
+            });;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animate Background</title>
+</head>
+
+<body>
+
+    <div class="scene">
+        <div class="sun"></div>
+        <div class="bg">
+            <img src="image/police_car.gif" alt="" class="car1">
+            <img src="image/police_car.gif" alt="" class="car2">
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.sun').click(function () {
+                $('.scene').toggleClass('dark')
+            })
+        });
+    </script>
+</body>
+
+</html>
