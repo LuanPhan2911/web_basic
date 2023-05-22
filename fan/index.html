@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="fan lv1">
+        <div class="wing1"></div>
+        <div class="wing2"></div>
+        <div class="wing3"></div>
+        <div class="wing4"></div>
+    </div>
+    <div class="setting">
+        <span class="level" value="0">0</span>
+        <span class="level" value="1">1</span>
+        <span class="level" value="2">2</span>
+        <span class="level" value="3">3</span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            function getRotationDegrees(obj) {
+                var matrix = obj.css("-webkit-transform") ||
+                    obj.css("-moz-transform") ||
+                    obj.css("-ms-transform") ||
+                    obj.css("-o-transform") ||
+                    obj.css("transform");
+                if (matrix !== 'none') {
+                    var values = matrix.split('(')[1].split(')')[0].split(',');
+                    var a = values[0];
+                    var b = values[1];
+                    var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+                } else { var angle = 0; }
+                return (angle < 0) ? angle + 360 : angle;
+            }
+            $('.level').each(function (i, el) {
+                $(el).click(function () {
+                    $('.level').each(function (i, el) {
+                        $(el).removeClass('active');
+                    })
+                    let deg = `${getRotationDegrees($('.fan')) + 3}deg`;
+                    $('.fan').css('transform', `rotate(${deg})`);
+
+
+                    for (let i = 0; i <= 3; i++) {
+                        if ($('.fan').hasClass(`lv${i}`)) {
+                            $('.fan').removeClass(`lv${i}`);
+                        }
+                    }
+
+                    $('.fan').addClass(`lv${$(this).attr('value')}`);
+                    $(this).addClass('active');
+
+                })
+            })
+
+        });
+    </script>
+</body>
+
+</html>

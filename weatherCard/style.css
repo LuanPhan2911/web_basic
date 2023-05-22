@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 450px;
+}
+.card .forecast ul {
+  position: relative;
+}
+.card .forecast ul li {
+  list-style: none;
+  color: #fff;
+  border-bottom: 3px solid #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.card .front {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  padding: 30px;
+  transition: 0.5s;
+  transform-origin: right;
+}
+.card .front .header {
+  display: flex;
+  justify-content: space-around;
+}
+.card .front .header .location {
+  font-weight: 600;
+  width: 50%;
+  color: #fff;
+}
+.card .front .header .more {
+  width: 50%;
+  cursor: pointer;
+  font-size: 1.25em;
+  text-align: right;
+  color: #fff;
+}
+.card .front .content {
+  position: relative;
+}
+.card .front .content .weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0 20px;
+}
+.card .front .content .weather i {
+  font-size: 4em;
+  color: #fff;
+}
+.card .front .content .weather h1 {
+  font-size: 3em;
+  color: #fff;
+  line-height: 0.7em;
+}
+.card .front .content .weather h1 span {
+  font-size: 0.5em;
+}
+.card .back {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  background: #ff2877;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: 0.5s;
+  padding: 30px;
+  transform: translateX(100%) rotateY(90deg);
+}
+.card .back .goBack {
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.25em;
+}
+.card .back.active {
+  transform: translateX(0) rotateY(0deg);
+}/*# sourceMappingURL=style.css.map */

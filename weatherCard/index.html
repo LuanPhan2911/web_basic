@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Card</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="front">
+            <div class="header">
+                <div class="location">New Delhi</div>
+                <div class="more">
+                    <i class="bi bi-info-circle-fill"></i>
+                </div>
+            </div>
+            <div class="content">
+                <div class="weather">
+                    <i class="bi bi-brightness-high"></i>
+                    <h1>30 <sup>o</sup> <br> <span>Today</span></h1>
+
+                </div>
+                <div class="forecast">
+                    <ul>
+                        <li>
+                            <div class="day">Sunday</div>
+                            <div class="temperature">
+                                <i class="bi bi-cloud"></i>
+                                8 <sup>o</sup>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="day">Monday</div>
+                            <div class="temperature">
+                                <i class="bi bi-cloud-snow"></i>2 <sup>o</sup>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="day">Yesterday</div>
+                            <div class="temperature">
+                                <i class="bi bi-wind"></i>15 <sup>o</sup>
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <div class="day">Today</div>
+                            <div class="temperature">
+                                <i class="bi bi-brightness-high"></i>30 <sup>o</sup>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="day">Tomorrow</div>
+                            <div class="temperature">
+                                <i class="bi bi-cloud-sun"></i>15 <sup>o</sup>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="day">Friday</div>
+                            <div class="temperature">
+                                <i class="bi bi-cloud-lightning-rain"></i>18 <sup>o</sup>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="day">Saturday</div>
+                            <div class="temperature">
+                                <i class="bi bi-cloud-drizzle"></i>14 <sup>o</sup>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="back">
+            <div class="goBack">
+                <i class="bi bi-backspace"></i>
+            </div>
+            <div class="forecast">
+                <ul>
+                    <li>
+                        <div class="day">Sunday</div>
+                        <div class="temperature">
+                            <i class="bi bi-cloud"></i>
+                            8 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Monday</div>
+                        <div class="temperature">
+                            <i class="bi bi-cloud-snow"></i>2 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Yesterday</div>
+                        <div class="temperature">
+                            <i class="bi bi-wind"></i>15 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Today</div>
+                        <div class="temperature">
+                            <i class="bi bi-brightness-high"></i>30 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Tomorrow</div>
+                        <div class="temperature">
+                            <i class="bi bi-cloud-sun"></i>15 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Friday</div>
+                        <div class="temperature">
+                            <i class="bi bi-cloud-lightning-rain"></i>18 <sup>o</sup>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="day">Saturday</div>
+                        <div class="temperature">
+                            <i class="bi bi-cloud-drizzle"></i>14 <sup>o</sup>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.more').click(function () {
+                $('.back').addClass('active');
+            })
+            $('.goBack').click(function () {
+
+                $('.back').removeClass('active');
+            })
+        });
+    </script>
+</body>
+
+</html>
