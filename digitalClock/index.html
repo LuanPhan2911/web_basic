@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="seconds">
+            <div class="flip second-last"></div>
+            <input type="hidden">
+            <div class="flip-display">
+                <div class="flip-display-top">5</div>
+                <div class="flip-display-bottom">5</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="anime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // function addZero(n) {
+            //     if (n < 10) {
+            //         return String(n).padStart(2, "0");
+            //     }
+            //     return n;
+            // }
+            // setInterval(function () {
+            //     let date = new Date();
+            //     let hour = addZero(date.getHours())
+            //     let minute = addZero(date.getMinutes())
+            //     let second = addZero(date.getSeconds())
+            //     $('.hour').text(hour);
+            //     $('.minute').text(minute);
+            //     $('.second').text(second);
+            // }, 1000)
+
+        });
+    </script>
+</body>
+
+</html>
