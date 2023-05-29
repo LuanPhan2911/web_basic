@@ -11,15 +11,92 @@
 
 <body>
     <div class="clock">
-        <div class="seconds">
-            <div class="flip second-last"></div>
-            <input type="hidden">
-            <div class="flip-display">
-                <div class="flip-display-top">5</div>
-                <div class="flip-display-bottom">5</div>
+        <div class="hour">
+            <div class="flip hour-first">
+                <input type="hidden">
+                <div class="flip-display">
+                    <span>5</span>
 
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip hour-last">
+                <input type="hidden">
+                <div class="flip-display">
+                    <span>5</span>
+
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
             </div>
         </div>
+        <div class="minutes">
+            <div class="flip minutes-first">
+                <input type="hidden">
+                <div class="flip-display">
+                    <span>5</span>
+
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip minutes-last">
+                <input type="hidden">
+                <div class="flip-display">
+                    <span>5</span>
+
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="seconds">
+            <div class="flip seconds-first">
+                <input type="hidden">
+                <div class="flip-display">
+                    <span>5</span>
+
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip seconds-last">
+
+                <div class="flip-display">
+                    <span>5</span>
+
+                </div>
+                <div class="flipper">
+                    <div class="flipper-top">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
     <script src="anime.js"></script>
@@ -27,22 +104,64 @@
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
-            // function addZero(n) {
-            //     if (n < 10) {
-            //         return String(n).padStart(2, "0");
-            //     }
-            //     return n;
-            // }
-            // setInterval(function () {
-            //     let date = new Date();
-            //     let hour = addZero(date.getHours())
-            //     let minute = addZero(date.getMinutes())
-            //     let second = addZero(date.getSeconds())
-            //     $('.hour').text(hour);
-            //     $('.minute').text(minute);
-            //     $('.second').text(second);
-            // }, 1000)
+            function generateDate() {
+                let date = new Date();
+                const hour = date.getHours();
+                const minutes = date.getMinutes();
+                const seconds = date.getSeconds();
+                return {
+                    hour: {
+                        firstDigit: Math.floor(parseInt(hour) / 10),
+                        lastDigit: Math.floor(parseInt(hour) % 10),
+                    },
+                    minutes: {
+                        firstDigit: Math.floor(parseInt(minutes) / 10),
+                        lastDigit: Math.floor(parseInt(minutes) % 10),
+                    },
+                    seconds: {
+                        firstDigit: Math.floor(parseInt(seconds) / 10),
+                        lastDigit: Math.floor(parseInt(seconds) % 10),
+                    },
+                }
+            }
 
+            function changedTime(query, compareValue) {
+                value = +$(`.${query}`).find('span').text();
+                if (query !== compareValue) {
+                    return true;
+                }
+                return false;
+
+            }
+            $('.seconds-last').find('span').one("changeValue", () => {
+                $('.seconds-last').find('.flipper-top').addClass('play');
+            })
+            $('.seconds-last').find('span').one("animationEnd", () => {
+                $('.seconds-last').find('.flipper-top').removeClass('play');
+            })
+            setInterval(function () {
+                let date = generateDate();
+
+
+
+
+                $('.hour-first').find('span').text(date.hour.firstDigit);
+                $('.hour-last').find('span').text(date.hour.lastDigit);
+                $('.minutes-first').find('span').text(date.minutes.firstDigit);
+                $('.minutes-last').find('span').text(date.minutes.lastDigit);
+
+                $('.seconds-first').find('span').text(date.seconds.firstDigit);
+                $('.seconds-last').find('span').text(date.seconds.lastDigit);
+
+
+            }, 1000);
+
+            // anime({
+            //     targets: ".flipper .flipper-top",
+            //     rotateX: [0, -180],
+            //     duration: 1000,
+            //     loop: true
+            // })
         });
     </script>
 </body>
