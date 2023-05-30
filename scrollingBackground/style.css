@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+#paralax {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: #000;
+  overflow: hidden;
+}
+#paralax .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#paralax .layer.bg {
+  background: url("image/bg.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#paralax .layer.overplay {
+  background: url("image/overlay.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#paralax .layer.assassin {
+  background: url("image/assassins.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#paralax .layer.bottom {
+  background: url("image/bottom.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section {
+  padding: 0 100px 100px;
+  text-align: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+section img {
+  max-width: 500px;
+}
+section p {
+  color: #fff;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

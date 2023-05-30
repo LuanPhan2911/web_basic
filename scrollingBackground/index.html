@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="paralax">
+        <div class="layer bg" data-speed="0.1"></div>
+        <div class="layer overplay" data-speed="0.3"></div>
+        <div class="layer assassin" data-speed="0.25"></div>
+        <div class="layer bottom" data-speed="0"></div>
+    </div>
+    <section>
+        <img src="image/text.png" alt="" srcset="">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem deleniti deserunt, vel suscipit nisi
+            nihil debitis, nemo aliquid natus, laudantium adipisci neque eum est odit doloremque aliquam explicabo
+            praesentium nostrum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel omnis doloribus, natus ab beatae recusandae
+            adipisci laboriosam aperiam voluptatibus placeat provident repellendus? Aut at laboriosam atque animi labore
+            accusantium vero.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, corporis praesentium? Repellat sit rem
+            molestias magni eos, natus at, architecto pariatur in incidunt nisi? Fuga vero mollitia quae excepturi
+            delectus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad non alias architecto expedita,
+            quisquam minima, illo accusantium repudiandae similique eveniet quas natus laborum veritatis libero
+            molestias delectus, cum modi tenetur.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum minima eius quam praesentium, quaerat
+            quo sequi non delectus suscipit ducimus nesciunt esse a earum, rerum nobis fugit voluptatibus recusandae?
+        </p>
+    </section>
+
+    <script src="anime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#paralax",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            })
+            gsap.utils.toArray(".layer").forEach(el => {
+                const speed = el.dataset.speed;
+                const movement = -(el.offsetHeight * speed);
+                tl.to(el, { y: movement, ease: "none" })
+            })
+        });
+    </script>
+</body>
+
+</html>

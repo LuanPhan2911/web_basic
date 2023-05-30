@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+%d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  @extend %d-flex;
+  min-height: 100vh;
+  background: url("images/main.jpg") no-repeat center center;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  @extend %d-flex;
+  flex-direction: column;
+  h2 {
+    position: relative;
+    font-size: 3em;
+    font-weight: 700;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 30%;
+      width: 200px;
+      height: 5px;
+
+      border-bottom: 3px solid #fff;
+      opacity: 0.5;
+    }
+  }
+  p {
+    margin-top: 50px;
+    font-size: 2em;
+    color: #fff;
+  }
+}
