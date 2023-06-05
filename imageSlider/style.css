@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.section .thumb-box .navigate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  background: #0b061f;
+  position: relative;
+  overflow: hidden;
+}
+.section .toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 100;
+}
+.section .toggle i {
+  font-size: 4em;
+  color: #333;
+}
+.section .thumb-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.section .thumb-box .navigate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 80%;
+  bottom: 0;
+  flex-direction: column;
+  transform: translateX(300px);
+  transition: 0.5s;
+}
+.section .thumb-box .navigate li {
+  list-style: none;
+  height: 20%;
+  margin: 20px 0;
+  display: inline-block;
+  cursor: pointer;
+}
+.section .thumb-box .navigate li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.section #main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/img1.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: 0.5s;
+  background-origin: right bottom;
+}
+.section.active #main-image {
+  width: 80%;
+}
+.section.active .toggle {
+  transform: rotate(180deg);
+  right: 25%;
+}
+.section.active .thumb-box .navigate {
+  transform: translateX(0);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="stop-watch">
+        <div class="time">
+            <span class="second">00</span>
+            <span class="seperate">:</span>
+            <span class="millisecond">00</span>
+        </div>
+
+        <div class="setting">
+            <button class="start">Start</button>
+            <button class="stop">Stop</button>
+            <button class="reset">Reset</button>
+
+        </div>
+    </div>
+
+    <script src="anime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            function addZero(n) {
+                if (n < 10) {
+                    return String(n).padStart(2, "0");
+                }
+                return String(n);
+            }
+            let data = {
+                second: 0,
+                millisecond: 0
+            };
+            let interval;
+            let { millisecond, second } = data;
+            function initData() {
+                second = 0;
+                millisecond = 0;
+                $('.second').html(`${addZero(second)}`);
+                $('.millisecond').html(`${addZero(millisecond)}`);
+            }
+            function start() {
+                interval = setInterval(function () {
+                    millisecond++;
+                    if (millisecond === 99) {
+                        second++;
+                        millisecond = 0;
+                        $('.second').html(`${addZero(second)}`);
+                    }
+
+                    $('.millisecond').html(`${addZero(millisecond)}`);
+
+
+
+                }, 10)
+            }
+            function stop() {
+                clearInterval(interval);
+            }
+            function reset() {
+                clearInterval(interval);
+                initData();
+            }
+            $('.start').click(start);
+            $('.stop').click(stop);
+            $('.reset').click(reset);
+
+        });
+    </script>
+</body>
+
+</html>
