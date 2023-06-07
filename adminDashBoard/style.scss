@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -123,7 +144,7 @@ body {
       }
       .search {
         position: relative;
-        width: 400px;
+        max-width: 400px;
         margin: 0 10px;
         label {
           position: relative;
@@ -271,27 +292,41 @@ body {
         min-height: 530px;
         background: #fff;
 
-        table tr {
-          &:hover {
-            background: #0329f4;
-            color: #fff;
-          }
-          td {
-            padding: 5px 10px;
-            .imgBx {
-              position: relative;
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              overflow: hidden;
+        table {
+          border-collapse: collapse;
+          width: 70%;
+          tr {
+            &:hover {
+              background: #0329f4;
+              color: #fff;
+            }
+            td {
+              padding: 5px 10px;
+              .imgBx {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
 
-              img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+                img {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              h4 {
+                font-size: 1.2em;
+                color: #111;
+                font-weight: 600;
+                span {
+                  display: block;
+                  font-size: 0.8em;
+                  color: #999;
+                }
               }
             }
           }
@@ -299,59 +334,80 @@ body {
       }
     }
   }
-  @media (max-width: 992px) {
+  @include desktop() {
     .navigate {
       left: -300px;
       &.active {
-        left: 0;
         width: 300px;
+        left: 0;
       }
     }
     .main {
       width: 100%;
       left: 0;
+      &.active {
+        left: 300px;
+        width: calc(100% - 300px);
+      }
       .cardBox {
-        grid-template-columns: 2fr 2fr;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @include tablet() {
+    .main {
+      &.active {
+        .details {
+          grid-template-columns: 1fr;
+          .recentOrders .cardHead {
+            h2 {
+              font-size: 18px;
+              font-weight: 600;
+            }
+          }
+        }
       }
       .details {
         grid-template-columns: 1fr;
-      }
-      &.active {
-        width: calc(100% - 300px);
-        left: 300px;
-        .cardBox {
-          grid-template-columns: 2fr 2fr;
-        }
-        .details {
-          grid-template-columns: 1fr;
+        .recentOrders .cardHead {
+          h2 {
+            font-size: 18px;
+            font-weight: 600;
+          }
         }
       }
     }
   }
-  @media (max-width: 540px) {
+  @include mobile() {
     .navigate {
       &.active {
         width: 100%;
+        z-index: 100;
       }
     }
     .main {
-      width: 100%;
-      left: 0;
-
+      &.active {
+        .topbar {
+          .toggle {
+            z-index: 100;
+            right: 5px;
+            top: 5px;
+            &::before {
+              content: "\F628";
+              color: #fff;
+            }
+          }
+        }
+      }
       .cardBox {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
       }
       .details {
-        grid-template-columns: 1fr;
-      }
-      &.active {
-        width: calc(100% - 300px);
-        left: 300px;
-        .cardBox {
-          grid-template-columns: 1fr;
-        }
-        .details {
-          grid-template-columns: 1fr;
+        .recentOrders {
+          overflow-x: auto;
+          table {
+            width: 600px;
+          }
         }
       }
     }

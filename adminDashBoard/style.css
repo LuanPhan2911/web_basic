@@ -122,7 +122,7 @@ body .btn {
 }
 .container .main .topbar .search {
   position: relative;
-  width: 400px;
+  max-width: 400px;
   margin: 0 10px;
 }
 .container .main .topbar .search label {
@@ -269,6 +269,10 @@ body .btn {
   min-height: 530px;
   background: #fff;
 }
+.container .main .details .recentCustomers table {
+  border-collapse: collapse;
+  width: 70%;
+}
 .container .main .details .recentCustomers table tr:hover {
   background: #0329f4;
   color: #fff;
@@ -292,57 +296,73 @@ body .btn {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.container .main .details .recentCustomers table tr td h4 {
+  font-size: 1.2em;
+  color: #111;
+  font-weight: 600;
+}
+.container .main .details .recentCustomers table tr td h4 span {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+}
 @media (max-width: 992px) {
   .container .navigate {
     left: -300px;
   }
   .container .navigate.active {
-    left: 0;
     width: 300px;
+    left: 0;
   }
   .container .main {
     width: 100%;
     left: 0;
   }
-  .container .main .cardBox {
-    grid-template-columns: 2fr 2fr;
-  }
-  .container .main .details {
-    grid-template-columns: 1fr;
-  }
   .container .main.active {
-    width: calc(100% - 300px);
     left: 300px;
+    width: calc(100% - 300px);
   }
-  .container .main.active .cardBox {
-    grid-template-columns: 2fr 2fr;
-  }
-  .container .main.active .details {
-    grid-template-columns: 1fr;
+  .container .main .cardBox {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 540px) {
-  .container .navigate.active {
-    width: 100%;
-  }
-  .container .main {
-    width: 100%;
-    left: 0;
-  }
-  .container .main .cardBox {
+@media (max-width: 768px) {
+  .container .main.active .details {
     grid-template-columns: 1fr;
+  }
+  .container .main.active .details .recentOrders .cardHead h2 {
+    font-size: 18px;
+    font-weight: 600;
   }
   .container .main .details {
     grid-template-columns: 1fr;
   }
-  .container .main.active {
-    width: calc(100% - 300px);
-    left: 300px;
+  .container .main .details .recentOrders .cardHead h2 {
+    font-size: 18px;
+    font-weight: 600;
   }
-  .container .main.active .cardBox {
-    grid-template-columns: 1fr;
+}
+@media (max-width: 480px) {
+  .container .navigate.active {
+    width: 100%;
+    z-index: 100;
   }
-  .container .main.active .details {
-    grid-template-columns: 1fr;
+  .container .main.active .topbar .toggle {
+    z-index: 100;
+    right: 5px;
+    top: 5px;
+  }
+  .container .main.active .topbar .toggle::before {
+    content: "\f628";
+    color: #fff;
+  }
+  .container .main .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .container .main .details .recentOrders {
+    overflow-x: auto;
+  }
+  .container .main .details .recentOrders table {
+    width: 600px;
   }
 }/*# sourceMappingURL=style.css.map */
